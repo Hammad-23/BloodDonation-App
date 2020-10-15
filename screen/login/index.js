@@ -50,13 +50,13 @@ function LogIn(props) {
            <TextInput onChange={pass} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} secureTextEntry={true}  placeholder='Write password here'/>
          </View>
          <View style={{marginTop: 30, width: 80, marginLeft: 80}}>
-           <Button onPress={()=>{props.setLog(false)
-           props.setSign(true)
-          
-          }}   title='Log In' color='green' />
+           <Button   title='Log In' color='green' />
          </View>
          <View style={{marginTop: 20, width: 120, marginLeft: 60}}>
-           <Button   title='Go to SignUp' color='#10302d' />
+           <Button  onPress={()=>{props.setLog(false)
+           props.setSign(true)
+          
+          }}   title='Go to SignUp' color='#10302d' />
          </View>
          <View style={{marginTop: 20}}>
            <Button title='LogIn with Facebook'/>
