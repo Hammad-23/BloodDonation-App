@@ -6,6 +6,8 @@ import { StyleSheet, Text, View, TextInput, Button,ImageBackground } from 'react
 
 function SignUp(props){
 
+    const image = {uri: 'https://images.assetsdelivery.com/compings_v2/writerfantast/writerfantast1811/writerfantast181100249.jpg'}
+
     const [info,setInfo] =useState()
 
     const fullname=(enteredText)=>{
@@ -23,14 +25,19 @@ function SignUp(props){
         setInfo({pass: password})
     }
 
-    const signup =()=>{
-        AsyncStorage.setItem('userInfo',info);
+    const signup =async ()=>{
+        AsyncStorage.setItem('userInfo','hello');
         alert('wait ho raha hai')
+
+      
     }
 
     return(
         <>
-        <View style={{alignItems:"center",marginTop:250}}>
+        <ImageBackground source={image} style={{ flex: 1,
+      resizeMode: 'cover',
+      justifyContent: 'center',}}>
+        <View style={{alignItems:"center",marginTop:120}}>
 
             <View>
                 <TextInput onChange={fullname} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} placeholder='Enter FullName '/>
@@ -52,6 +59,7 @@ function SignUp(props){
             </View>
 
         </View>
+        </ImageBackground>
 
         </>
     )
