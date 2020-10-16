@@ -18,6 +18,7 @@ function SignUp(props){
     const userEmail=(enteredText)=>{
         const email = (enteredText.nativeEvent.text)
         setInfo({user: email})
+        console.log(info)
     }
 
     const userPass=(enteredText)=>{
@@ -25,9 +26,18 @@ function SignUp(props){
         setInfo({pass: password})
     }
 
-    const signup =async ()=>{
-        AsyncStorage.setItem('userInfo','hello');
-        alert('wait ho raha hai')
+    const signup = async ()=>{
+        try{
+             const data =   await AsyncStorage.setItem('userInfo',info)
+             console.log(data)
+            //    .then(function(){
+            //        alert('data saved')
+            //    })
+        // alert('wait ho raha hai')
+        } catch(error){
+            const err = error.message
+            alert(err)
+        }
 
       
     }

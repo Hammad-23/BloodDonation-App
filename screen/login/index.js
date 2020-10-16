@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
+import { AsyncStorage } from 'react-native';
 import { StyleSheet, Text, View, TextInput, Button,ImageBackground } from 'react-native';
 
 
@@ -24,6 +25,23 @@ function LogIn(props) {
       setUsername({password:code})
       console.log(username)
      
+    }
+
+    const login =async ()=>{
+       try{
+        const value =  await AsyncStorage.getItem('userInfo')
+         .then(function(){
+           if(value.user === username.email && value.pass === username.password){
+               alert('data match hoagay')
+           }else{
+             alert('data match nhi ho raha')
+           }
+              
+              // console.log(value)
+         })
+       } catch(error){
+          alert(error.message)
+       }
     }
       
     // const logIn = ()=>{
@@ -50,7 +68,7 @@ function LogIn(props) {
            <TextInput onChange={pass} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} secureTextEntry={true}  placeholder='Write password here'/>
          </View>
          <View style={{marginTop: 30, width: 80, marginLeft: 80}}>
-           <Button   title='Log In' color='green' />
+           <Button onPress={login}   title='Log In' color='green' />
          </View>
          <View style={{marginTop: 20, width: 120, marginLeft: 60}}>
            <Button  onPress={()=>{props.setLog(false)
