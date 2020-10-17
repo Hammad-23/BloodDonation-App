@@ -54,8 +54,8 @@ function LogIn(props) {
       <View style={styles.container}>
         
        
-        <View style={{marginBottom: 200,backgroundColor: 'lightblue',borderRadius:10}}>
-          <Text style={{color: 'red', fontSize: 30, fontFamily: 'sans-serif', fontWeight:"bold"}}>Blood Donation App</Text>
+        <View style={{marginBottom: 200,backgroundColor: 'lightblue',borderRadius:10,width: '100%',height:50}}>
+          <Text style={{color: 'red', fontSize: 30, fontFamily: 'sans-serif', fontWeight:"bold",marginLeft:40}}>Blood Donation App</Text>
         </View>
        <View>
          <View>
