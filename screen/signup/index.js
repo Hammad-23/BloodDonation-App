@@ -8,36 +8,36 @@ function SignUp(props){
 
     const image = {uri: 'https://images.assetsdelivery.com/compings_v2/writerfantast/writerfantast1811/writerfantast181100249.jpg'}
 
-    const [info,setInfo] =useState()
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+    const [fullName,setName]=useState('')
 
     const fullname=(enteredText)=>{
         const name = (enteredText.nativeEvent.text)
-        setInfo({fullName: name})
+       setName(name)
     }
 
     const userEmail=(enteredText)=>{
         const email = (enteredText.nativeEvent.text)
-        setInfo({user: email})
-        console.log(info)
+      setEmail(email)
     }
 
     const userPass=(enteredText)=>{
         const password = (enteredText.nativeEvent.text)
-        setInfo({pass: password})
+       setPassword(password)
     }
 
     const signup = async ()=>{
-        try{
-             const data =   await AsyncStorage.setItem('userInfo',info)
-             console.log(data)
-            //    .then(function(){
-            //        alert('data saved')
-            //    })
-        // alert('wait ho raha hai')
-        } catch(error){
-            const err = error.message
-            alert(err)
-        }
+        const obj={fullName,email,password}
+        console.log(obj)
+        try {
+            await AsyncStorage.setItem('userInfo', JSON.stringify(obj));
+            console.log('try')
+          }
+          catch(e){
+
+                console.log(e)
+          }
 
       
     }

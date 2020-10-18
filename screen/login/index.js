@@ -6,14 +6,18 @@ import { StyleSheet, Text, View, TextInput, Button,ImageBackground,TouchableOpac
 
 
 function LogIn(props) {
-    const [username,setUsername] = useState()
+    // const [username,setUsername] = useState()
+
+    const [userEmail,setUserEmail] = useState('')
+    const [userPass,setUserPass] = useState('')
+    
 
   
 
     const val = function(enteredText){
       const name =(enteredText.nativeEvent.text)
       
-      setUsername({email:name})
+      setUserEmail(name)
   
       // console.log(username)
       
@@ -22,23 +26,23 @@ function LogIn(props) {
     const pass= (enteredText)=>{
   
       const code =(enteredText.nativeEvent.text)
-      setUsername({password:code})
-      console.log(username)
+      setUserPass(code)
+      // console.log(username)
      
     }
 
+
+
     const login =async ()=>{
+      const userObj = {userEmail,userPass}
        try{
         const value =  await AsyncStorage.getItem('userInfo')
-         .then(function(){
-           if(value.user === username.email && value.pass === username.password){
-               alert('data match hoagay')
-           }else{
-             alert('data match nhi ho raha')
-           }
-              
-              // console.log(value)
-         })
+        if(userObj.userEmail===value.email && userObj.userPass===value.password){
+
+          alert('hogaya log in')
+        }
+      
+     
        } catch(error){
           alert(error.message)
        }
