@@ -37,7 +37,8 @@ function LogIn(props) {
       const userObj = {userEmail,userPass}
        try{
         const value =  await AsyncStorage.getItem('userInfo')
-        if(userObj.userEmail===value.email && userObj.userPass===value.password){
+        const data = JSON.parse(value)
+        if(userObj.userEmail===data.email && userObj.userPass===data.password){
 
           alert('hogaya log in')
         }
