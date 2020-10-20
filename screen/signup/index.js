@@ -33,6 +33,9 @@ function SignUp(props){
         try {
             await AsyncStorage.setItem('userInfo', JSON.stringify(obj));
             console.log('try')
+            alert('sign up hoagaya')
+            props.setLog(true)
+            props.setSign(false)
           }
           catch(e){
 
