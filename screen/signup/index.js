@@ -36,6 +36,7 @@ function SignUp(props){
             alert('sign up hoagaya')
             props.setLog(true)
             props.setSign(false)
+
           }
           catch(e){
 

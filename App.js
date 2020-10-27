@@ -5,17 +5,20 @@ import { StyleSheet, Text, View, TextInput, Button,ImageBackground, ScrollView }
 // import Blood from './assets/image/blood.jpg'
 import LogIn from './screen/login'
 import SignUp from './screen/signup'
+// import Home from './screen/home'
 
 export default function App() {
   const [log,setLog] = useState(true)
   const [sign,setSign] = useState(false)
+  
 return(
 
   <>
 
 
-{log && < LogIn setLog={setLog} setSign={setSign}/> }
+{log && < LogIn setLog={setLog} setSign={setSign} /> }
 { sign &&  <SignUp setLog={setLog}  setSign={setSign}/>    }
+ 
 
 {/* 
     <StatusBar style="auto" /> */}

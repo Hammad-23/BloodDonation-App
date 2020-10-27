@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { AsyncStorage } from 'react-native';
-import { StyleSheet, Text, View, TextInput, Button,ImageBackground,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button,ImageBackground,TouchableOpacity,ScrollView } from 'react-native';
 
 
 
@@ -39,8 +39,17 @@ function LogIn(props) {
         const value =  await AsyncStorage.getItem('userInfo')
         const data = JSON.parse(value)
         if(userObj.userEmail===data.email && userObj.userPass===data.password){
-
+            
+                   
           alert('hogaya log in')
+          // props.setHom(true)
+          // props.setLog(false)
+          // props.setSign(false)
+          
+         
+           
+
+
         }
       
      
@@ -55,14 +64,21 @@ function LogIn(props) {
   
     const image = { uri: "https://st.depositphotos.com/1163607/1682/v/450/depositphotos_16827173-stock-illustration-blood-donation.jpg" };
     return (
-      <ImageBackground source={image} style={styles.image}>
+      // <ImageBackground source={image} style={styles.image}>
+      <ScrollView>
       <View style={styles.container}>
         
        
-        <View style={{marginBottom: 200,backgroundColor: 'lightblue',borderRadius:10,width: '100%',height:50}}>
-          <Text style={{color: 'red', fontSize: 30, fontFamily: 'sans-serif', fontWeight:"bold",marginLeft:40}}>Blood Donation App</Text>
+        <View style={{marginBottom: 20,backgroundColor: '#9c0202',borderRadius:10,width: '100%',height:200}}>
+          {/* <Text style={{color: 'red', fontSize: 30, fontFamily: 'sans-serif', fontWeight:"bold",marginLeft:40}}>Blood Donation App</Text> */}
+          <Text style={{color: 'white',marginTop:150,marginLeft:250,fontSize:30}}>Log In</Text>
         </View>
+        <View  >
+           <Text style={{color:'red',fontSize:25,fontWeight:'300',paddingBottom:30,paddingRight:150}}>Welcome Back </Text>
+           <Text style={{color:'red',fontSize:20,paddingBottom:30,paddingRight:150}}>Continue to Sign In!</Text>
+         </View>
        <View>
+        
          <View>
            <TextInput onChange={val}
   
@@ -95,7 +111,8 @@ function LogIn(props) {
         <StatusBar style="auto" />
        
       </View>
-      </ImageBackground>
+     
+      </ScrollView>
     );
         
 
