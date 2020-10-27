@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 // import SyncStorage from 'sync-storage';
 import { AsyncStorage } from 'react-native';
-import { StyleSheet, Text, View, TextInput, Button,ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button,ImageBackground,ScrollView } from 'react-native';
 
 
 function SignUp(props){
 
-    const image = {uri: 'https://images.assetsdelivery.com/compings_v2/writerfantast/writerfantast1811/writerfantast181100249.jpg'}
+    // const image = {uri: 'https://images.assetsdelivery.com/compings_v2/writerfantast/writerfantast1811/writerfantast181100249.jpg'}
 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -48,33 +48,46 @@ function SignUp(props){
 
     return(
         <>
-        <ImageBackground source={image} style={{ flex: 1,
+        <ScrollView>
+        {/* <ImageBackground source={image} style={{ flex: 1,
       resizeMode: 'cover',
-      justifyContent: 'center',}}>
-        <View style={{alignItems:"center",marginTop:120}}>
+      justifyContent: 'center',}}> */}
+        <View style={{marginBottom: 20,backgroundColor: '#9c0202',borderRadius:8,width: '100%',height:200}}>
+          {/* <Text style={{color: 'red', fontSize: 30, fontFamily: 'sans-serif', fontWeight:"bold",marginLeft:40}}>Blood Donation App</Text> */}
+          <Text style={{color: 'white',marginTop:150,marginLeft:250,fontSize:30}}>Sign Up</Text>
+        </View>
+        <View  >
+           <Text style={{color:'red',fontSize:25,fontWeight:'300',paddingBottom:30,paddingRight:150}}>Welcome Back </Text>
+           <Text style={{color:'red',fontSize:20,paddingBottom:30,paddingRight:150}}>Continue to Sign Up!</Text>
+         </View>
+        <View style={{alignItems:"center"}}>
 
             <View>
-                <TextInput onChange={fullname} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} placeholder='Enter FullName '/>
+                <Text>Full Name</Text>
+                <TextInput onChange={fullname} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Enter FullName '/>
             </View>
-            <View style={{marginTop: 30}}>
-                <TextInput onChange={userEmail} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} placeholder='Enter Email'/>
+            <View style={{marginTop: 20}}>
+                <Text>Email</Text>
+                <TextInput onChange={userEmail} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Enter Email'/>
             </View>
-            <View style={{marginTop: 30}}>
-                <TextInput onChange={userPass} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} secureTextEntry={true} placeholder='Enter Password'/>
+            
+            <View style={{marginTop: 20}}>
+            <Text>Password</Text>
+                <TextInput onChange={userPass} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} secureTextEntry={true} placeholder=' Enter Password'/>
             </View>
-            <View style={{marginTop: 30}}>
-                <Button onPress={signup} color='green' title='Sign Up'/>
+            <View style={{marginTop: 20,width:250}}>
+                <Button onPress={signup} color='#9c0202' title='Sign Up'/>
             </View>
             <View style={{marginTop:20}}>
-            <Button onPress={()=>{props.setLog(true)
+            <Text onPress={()=>{props.setLog(true)
                                   props.setSign(false)
-            }} title='back'/>
+            }} title='back'>Have an account?<Text style={{color:'red',fontSize:15}}> Log In </Text></Text>
 
             </View>
 
         </View>
-        </ImageBackground>
-
+        {/* </ImageBackground> */}
+         </ScrollView>
         </>
     )
 }

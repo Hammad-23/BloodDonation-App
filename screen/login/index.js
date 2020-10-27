@@ -80,31 +80,37 @@ function LogIn(props) {
        <View>
         
          <View>
+           <Text>Email</Text>
            <TextInput onChange={val}
   
         
            
-           style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} placeholder='Write email here'/>
+           style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Write email here'/>
          </View>
-         <View style={{marginTop: 30}}>
-           <TextInput onChange={pass} style={{height: 40, borderColor: 'green', borderWidth: 1, maxWidth: 250, minWidth: 250,borderRadius:10}} secureTextEntry={true}  placeholder='Write password here'/>
+         <View style={{marginTop: 20}}>
+           <Text>Password</Text>
+           <TextInput onChange={pass} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} secureTextEntry={true}  placeholder=' Write password here'/>
          </View>
-         <View style={{marginTop: 30, width: 80, marginLeft: 80}}>
-           <TouchableOpacity>
-           <Button onPress={login}   title='Log In' color='green' />
-           </TouchableOpacity>
+         <Text style={{color:'red',marginLeft:150,marginTop:10}}>Forgot Password?</Text>
+         <View style={{marginTop: 30, width: 250}}>
+           {/* <TouchableOpacity onPress={login}
+            style={{backgroundColor:'red',height:'30'}}>
+           <Text>Log In</Text>
+           </TouchableOpacity> */}
+           <Button  onPress={login} title='Log In' color='#9c0202'  />
          </View>
-         <View style={{marginTop: 20, width: 120, marginLeft: 60}}>
-           <TouchableOpacity>
-           <Button  onPress={()=>{props.setLog(false)
+         <View style={{marginTop: 20, width: 200, marginLeft: 60}}>
+           <Text>Dont have an account?</Text>
+           {/* <TouchableOpacity> */}
+           <Text  onPress={()=>{props.setLog(false)
            props.setSign(true)
           
-          }}   title='Go to SignUp' color='#10302d' />
-          </TouchableOpacity>
+          }} style={{color:'red',marginLeft:50,fontSize:15}} >SignUp</Text>
+          {/* </TouchableOpacity> */}
          </View>
          <View style={{marginTop: 20}}>
            <TouchableOpacity>
-           <Button title='LogIn with Facebook'/>
+           <Button title='LogIn with Facebook' color='#9c0202'/>
            </TouchableOpacity>
          </View>
        </View>
