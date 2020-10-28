@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import SyncStorage from 'sync-storage';
 import { AsyncStorage } from 'react-native';
-import { StyleSheet, Text, View, TextInput, Button,ImageBackground,ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button,ImageBackground,ScrollView,TouchableOpacity } from 'react-native';
 
 
 function SignUp(props){
@@ -64,19 +64,23 @@ function SignUp(props){
 
             <View>
                 <Text>Full Name</Text>
-                <TextInput onChange={fullname} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Enter FullName '/>
+                <TextInput onChange={fullname} style={{height: 50, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:15}} placeholder=' Enter FullName '/>
             </View>
             <View style={{marginTop: 20}}>
                 <Text>Email</Text>
-                <TextInput onChange={userEmail} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Enter Email'/>
+                <TextInput onChange={userEmail} style={{height: 50, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:15}} placeholder=' Enter Email'/>
             </View>
             
             <View style={{marginTop: 20}}>
             <Text>Password</Text>
-                <TextInput onChange={userPass} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} secureTextEntry={true} placeholder=' Enter Password'/>
+                <TextInput onChange={userPass} style={{height: 50, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:15}} secureTextEntry={true} placeholder=' Enter Password'/>
             </View>
             <View style={{marginTop: 20,width:250}}>
-                <Button onPress={signup} color='#9c0202' title='Sign Up'/>
+                {/* <Button onPress={signup} color='#9c0202' title='Sign Up'/> */}
+                <TouchableOpacity onPress={signup} style={{backgroundColor:'#9c0202',height:50,borderRadius:15}}>
+           
+           <Text  style={{color: 'white',marginLeft:90,marginTop:10,fontSize:20}}>Sign Up</Text>
+           </TouchableOpacity>
             </View>
             <View style={{marginTop:20}}>
             <Text onPress={()=>{props.setLog(true)

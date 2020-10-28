@@ -85,11 +85,11 @@ function LogIn(props) {
   
         
            
-           style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} placeholder=' Write email here'/>
+           style={{height: 50, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:15}} placeholder=' Write email here'/>
          </View>
          <View style={{marginTop: 20}}>
            <Text>Password</Text>
-           <TextInput onChange={pass} style={{height: 40, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:1}} secureTextEntry={true}  placeholder=' Write password here'/>
+           <TextInput onChange={pass} style={{height: 50, borderColor: 'grey', borderWidth: 2, maxWidth: 250, minWidth: 250,borderRadius:15}} secureTextEntry={true}  placeholder=' Write password here'/>
          </View>
          <Text style={{color:'red',marginLeft:150,marginTop:10}}>Forgot Password?</Text>
          <View style={{marginTop: 30, width: 250}}>
@@ -97,7 +97,11 @@ function LogIn(props) {
             style={{backgroundColor:'red',height:'30'}}>
            <Text>Log In</Text>
            </TouchableOpacity> */}
-           <Button  onPress={login} title='Log In' color='#9c0202'  />
+           {/* <Button  onPress={login} title='Log In' color='#9c0202'  /> */}
+           <TouchableOpacity onPress={login} style={{backgroundColor:'#9c0202',height:50,borderRadius:15}}>
+           
+           <Text  style={{color: 'white',marginLeft:90,marginTop:10,fontSize:20}}>Log In</Text>
+           </TouchableOpacity>
          </View>
          <View style={{marginTop: 20, width: 200, marginLeft: 60}}>
            <Text>Dont have an account?</Text>
@@ -109,8 +113,9 @@ function LogIn(props) {
           {/* </TouchableOpacity> */}
          </View>
          <View style={{marginTop: 20}}>
-           <TouchableOpacity>
-           <Button title='LogIn with Facebook' color='#9c0202'/>
+           <TouchableOpacity style={{backgroundColor:'#9c0202',height:50,borderRadius:15}}>
+           
+           <Text style={{color: 'white',marginLeft:40,marginTop:10,fontSize:20}}>LogIn With Facebook</Text>
            </TouchableOpacity>
          </View>
        </View>
